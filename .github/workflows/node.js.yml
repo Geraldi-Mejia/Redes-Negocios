@@ -24,6 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        # https://github.com/actions/setup-node#caching-packages-dependenciescache-dependency-path: "./project/package-lock.json"
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
