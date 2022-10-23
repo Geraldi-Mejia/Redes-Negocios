@@ -27,5 +27,8 @@ jobs:
         # https://github.com/actions/setup-node#caching-packages-dependenciescache-dependency-path: "./project/package-lock.json"
     - run: npm ci
     - run: npm run build --if-present
+    - run: sudo rm -r /home/app
+    - run: sudo mkdir /home/app
+    - run: sudo cp -r /home/ubuntu/actions-runner/react-app/Redes-Negocios/Redes-Negocios/build /home/app
     - run: npm test
     
