@@ -30,6 +30,5 @@ jobs:
     - run: sudo rm -r /home/app
     - run: sudo mkdir /home/app
     - run: sudo cp -r /home/ubuntu/actions-runner/react-app/Redes-Negocios/Redes-Negocios/build /home/app
-    - run: sudo systemctl restart nginx
     - run: npm test
     
