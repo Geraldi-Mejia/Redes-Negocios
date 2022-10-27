@@ -8,5 +8,6 @@ export default function Home(){
         </p>
         <img className='home-image' src={logo} alt= "Logo de Oracle"/>
         </div>
+        <logo hidden></logo>
     </div>)
 }
