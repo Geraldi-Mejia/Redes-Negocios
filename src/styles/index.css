@@ -13,6 +13,7 @@ code {
 }
 h1{
   text-align: center;
+  color: rgb(58, 125, 159);
 }
 p{
   text-justify: inter-word;
@@ -30,6 +31,16 @@ p{
   margin: 10px 70px;
 }
 .home-image{
-  width: 100%;
+  width: 350px;
   height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .home-image{
+    width: 150px;
+    height: auto;
+  }
+  p{
+    font-size: 0.8rem;
+  }
 }

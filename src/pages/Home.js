@@ -1,6 +1,6 @@
 export default function Home() {
     return (<div>
-        <h1>Bienvenido al Proyecto de Redes en los negocios</h1>
+        <h1>Bienvenido al Proyecto de Redes En Los Negocios</h1>
         <div className='home-content'>
             <p>En este proyecto se ponen en practica los conceptos vistos en clase de ciber-seguridad,
                 Cloud computing mediante la plataforma de Oracle y autenticación además Integración continua y despliegue continuo.

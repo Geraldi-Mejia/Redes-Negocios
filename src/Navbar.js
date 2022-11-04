@@ -7,7 +7,7 @@
         <Link to="/" className="site-title">DevOpps App</Link>
         <ul>
            <CustomLink to="/project">Project</CustomLink>
-           <CustomLink to="/about">About</CustomLink>
+           <CustomLink to="/login">Login</CustomLink>
         </ul>
     </nav>
  }
