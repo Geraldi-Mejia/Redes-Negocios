@@ -43,4 +43,7 @@ p{
   p{
     font-size: 0.8rem;
   }
+  .login-wrapper{
+    margin: 0 5rem;
+  }
 }
