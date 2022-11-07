@@ -5,33 +5,19 @@ export default function Login() {
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
-    const [userD, setUserD] = useState({});
-    var userName = {};
 
-    const database = [{
-        username: "u",
-        rol: 1,
-        password: "p"
-    }, {
-        username: "user2",
-        rol: 2,
-        password: "pass2"
-    }];
     const errors = {
         err: "Informacion invalida",
     };
 
-    const handleSubmit = (event) => {
-        //prevent page reload
-        event.preventDefault();
-        var { uname, pass } = document.forms[0];
-
+    const login = (datos, uname,pass2) => {
 
         //find user login info
-        const userData = database.find((user) => user.username === uname.value);
-
+        const userData = datos.items.find((user) => user.username === uname);
+      
         if (userData) {
-            if (userData.password !== pass.value) {
+            if (userData.pass !== pass2) {
+                
                 setErrorMessages({ name: "pass", message: errors.err });
 
             } else {
@@ -40,14 +26,18 @@ export default function Login() {
                     setIsAdmin(true);
                 }
 
-                userName = { name: userData.username, rol: userData.rol, pass: userData.password };
-                setUserD(userName);
-                console.log(userD.value);
             }
         } else {
             setErrorMessages({ name: "uname", message: errors.err });
         }
+    }
 
+    const handleSubmit = (event) => {
+        //prevent page reload
+        event.preventDefault();
+        var { uname, pass } = document.forms[0];
+        fetch("https://g9136285fa968f4-redesproy.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/api/getusers")
+            .then(response => response.json()).then((jsonData) => login(jsonData, uname.value,pass.value));
     };
     const renderErrorMessage = (name) =>
         name === errorMessages.name && (
@@ -85,12 +75,12 @@ export default function Login() {
         </div>
     );
     const renderUserVIP = (
-        
+
         <div className="dash-Admin">
             <h2 className="dash">
                 Dashboard
             </h2>
-            <p>Bienvenido al contenido <strong>exclusivo</strong>, Se ha logueado exitosamente</p>
+            <p>Bienvenido al contenido <strong>VIP</strong>, Se ha logueado exitosamente</p>
         </div>
     );
     const renderDashboard = (
