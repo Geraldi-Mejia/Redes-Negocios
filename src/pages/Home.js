@@ -14,6 +14,7 @@ export default function Home() {
                     alt="Logo de Oracle B" />
                     
             </div>
+            <p>Geraldi Mejia Segura.</p>
         </div>
 
     </div>)

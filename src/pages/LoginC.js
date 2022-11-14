@@ -15,10 +15,6 @@ export default function Login() {
 
         //find user login info
         const userData = datos.items.find((user) => user.username === uname);
-        console.log(userData)
-        console.log(userData.pass)
-        console.log(md5(userData.pass))
-        console.log(pass2)
         if (userData) {
             if (userData.pass !== md5(pass2)) {
                 
