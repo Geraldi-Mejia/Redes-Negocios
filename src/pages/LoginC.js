@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import md5 from "md5";
 //import ReactDOM from "react";
 
 export default function Login() {
@@ -14,9 +15,12 @@ export default function Login() {
 
         //find user login info
         const userData = datos.items.find((user) => user.username === uname);
-      
+        console.log(userData)
+        console.log(userData.pass)
+        console.log(md5(userData.pass))
+        console.log(pass2)
         if (userData) {
-            if (userData.pass !== pass2) {
+            if (userData.pass !== md5(pass2)) {
                 
                 setErrorMessages({ name: "pass", message: errors.err });
 
